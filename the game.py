@@ -159,7 +159,7 @@ def day_thing():
                     time.sleep(1)
                     check()
 
-
+hi=0
 YN = input(
     'You control a village. Answer with yes or no unless otherwise prompted. Only use lower case. Press enter to contine ')
 while true == 'true':
