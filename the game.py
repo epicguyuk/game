@@ -52,7 +52,7 @@ use_this = options[random]
 true = 'true'
 interest = [30, 40, 50, 60]
 things_in_interest = len(interest) - 1
-random3 = randint(0, things_in_interst)
+random3 = randint(0, things_in_interest)
 use_this4 = interest[random3]
 
 
@@ -67,7 +67,7 @@ def check():
     population = round(population)
     happiness = round(happiness)
     if population < 1:
-        print('All your citizans have left your town.Game over :-(')
+        print('All your citizens have left your town.Game over :-(')
         exit()
     elif money < 1:
         state_of_emergency = 'yes'
