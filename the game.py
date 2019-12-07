@@ -31,7 +31,7 @@ d = 0
 f = 0
 g = 0
 h = 0
-l = 0
+z = 0
 day_cycle = 0
 no_repeat = 0
 extra_happiness = 0
@@ -51,7 +51,7 @@ random = randint(0, things_in_options)
 use_this = options[random]
 true = 'true'
 interest = [30, 40, 50, 60]
-things_in_interst = len(interest) - 1
+things_in_interest = len(interest) - 1
 random3 = randint(0, things_in_interst)
 use_this4 = interest[random3]
 
@@ -74,7 +74,9 @@ def check():
         state_of_emergency_happiness += 20
         happiness -= state_of_emergency_happiness
         cprint(
-            'You are in a state of emergency.Your happiness has decreased by {} total.It will contine being decreased by an exra 20 each time until its over'.format(
+            'You are in a state of emergency.'
+            'Your happiness has decreased by {} total.'
+            'It will continue being decreased by an extra 20 each time until its over'.format(
                 state_of_emergency_happiness), 'red')
         cprint('Your money is ={}'.format(money), 'blue')
         time.sleep(1)
@@ -87,7 +89,8 @@ def check():
             state_of_emergency_population += 20
             population -= state_of_emergency_population
             cprint(
-                'You are in a state of emergency.Your population has decreased by {}.It will contine being decreased by an exra 20 each time until its over'.format(
+                'You are in a state of emergency.Your population has decreased by {}.'
+                'It will continue being decreased by an extra 20 each time until its over'.format(
                     state_of_emergency_population, ), 'red')
             cprint('Your money is = {}'.format(money), 'blue')
             time.sleep(1)
@@ -100,7 +103,8 @@ def check():
         state_of_emergency_population += 20
         population -= state_of_emergency_population
         cprint(
-            'You are in a state of emergency.Your population has decreased by {}.It will contine being decreased by an exra 20 each time until its over'.format(
+            'You are in a state of emergency.Your population has decreased by {}.'
+            'It will continue being decreased by an extra 20 each time until its over'.format(
                 state_of_emergency_population), 'red')
         cprint('Your money is ={}'.format(money), 'blue')
         time.sleep(1)
@@ -147,7 +151,7 @@ def day_thing():
                     cprint('+{} population'.format(daily_happiness), 'green')
                     time.sleep(1)
                     if extra_happiness > 0:
-                        cprint('+{} happiness'.format(extra_happiness), 'green')  # problem here
+                        cprint('+{} happiness'.format(extra_happiness), 'green')
                     elif extra_happiness != 0:
                         cprint('{} happiness'.format(extra_happiness), 'red')
                     check()
@@ -159,8 +163,10 @@ def day_thing():
                     time.sleep(1)
                     check()
 
+
 YN = input(
-    'You control a village. Answer with yes or no unless otherwise prompted. Only use lower case. Press enter to contine ')
+    'You control a village. Answer with yes or no unless'
+    ' otherwise prompted. Only use lower case. Press enter to continue ')
 while true == 'true':
     if use_this == 1:  # bartender
         day_cycle += 0.2
@@ -207,7 +213,7 @@ while true == 'true':
     if use_this == 3:  # soldiers
         day_cycle += 0.2
         cprint('Squad of soldiers from outside the city:', 'yellow')
-        YN = input("Want to hire us?we'll protect your city aganst attacking citys and internal threats. ")
+        YN = input("Want to hire us?we'll protect your city against attacking cities and internal threats. ")
         if YN == 'yes':
             print('Thanks')
             options.remove(3)
@@ -330,9 +336,9 @@ while true == 'true':
                 print('You better have a plan')
                 time.sleep(1)
     if use_this == 8:  # clown
-        if l > 2:
+        if z > 2:
             day_cycle += 0.2
-            l += 1
+            z += 1
             cprint('Clown:', 'yellow')
             YN = input('Hey man,can I set up a circus in your town? ')
             if YN == 'yes':
@@ -352,7 +358,7 @@ while true == 'true':
                         time.sleep(1)
                         check()
                     else:
-                        print("Thats too much.I guess we'll go else where")
+                        print("That's too much.I guess we'll go else where")
                         time.sleep(1)
                 else:
                     print('Nice!')
@@ -386,7 +392,8 @@ while true == 'true':
             p += 1
             cprint('The devil', 'yellow')
             YN = input(
-                'Want to flip a coin?If you win,I free some souls but if I win I kill some of your people.What do you say?')
+                'Want to flip a coin?'
+                'If you win,I free some souls but if I win I kill some of your people.What do you say?')
             if YN == 'yes':
                 coin_toss = randint(1, 5)
                 heads_or_tails = input('Heads or tails? ')
@@ -421,16 +428,17 @@ while true == 'true':
                     population -= 50
                     check()
                 else:
-                    cprint("answer not vaild", 'red')
+                    cprint("answer not valid", 'red')
             else:
                 print('Your loss')
         else:
             options.remove(10)
     if use_this == 11:  # holiday
-        cprint("Citizan", 'yellow')
+        cprint("Citizen", 'yellow')
         day_cycle += 0.2
         YN = input(
-            "I think we should have a national holiday,like some of the other countries.It will only cost 10 gold.What do you think?should we?")
+            "I think we should have a national holiday,like some of the other countries."
+            "It will only cost 10 gold.What do you think?should we?")
         if YN == 'yes':
             print("Thanks")
             options.remove(11)
@@ -448,7 +456,7 @@ while true == 'true':
             happiness -= 20
             time.sleep(1)
             check()
-    if use_this == 12 and soldiers == 'yes':  # escapest
+    if use_this == 12 and soldiers == 'yes':  # escapist
         cprint('Squad of soldiers', 'yellow')
         day_cycle += 0.2
         options.remove(12)
@@ -497,7 +505,8 @@ while true == 'true':
                 time.sleep(1)
         elif a == 2:  # no posters
             print(
-                'We have recaptured the criminal unfortuantly,due to the lack of awearness about her,she struck agin,Killing 10.')
+                'We have recaptured the criminal unfortunately,'
+                'due to the lack of awareness about her,she struck again,Killing 10.')
             a += 5
             time.sleep(3)
             cprint('-10 population', 'red')
