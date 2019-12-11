@@ -567,7 +567,8 @@ while true == 'true':
         print("looks like you've finished the game.")
         check()
         input()
-        
+   # if money<51:
+     
     use_this3 = use_this
     day_thing()
     things_in_options = len(options) - 1
