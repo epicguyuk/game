@@ -232,7 +232,7 @@ while true == 'true':
         else:
             print('Ok.See you around.')
             time.sleep(1)
-    if use_this == 4 and money > 200:  # War alert
+    if use_this == 4:  # War alert
         day_cycle += 0.2
         cprint('Adviser:', 'yellow')
         options.append(6)
