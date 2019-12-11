@@ -6,6 +6,7 @@ authors = ["ya boi <getd3stroyed1@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+termcolor = "^1.1"
 
 [tool.poetry.dev-dependencies]
 

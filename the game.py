@@ -16,7 +16,7 @@ use_this2_defence = win_lose_defence[random2_defence]
 money = 100
 population = 100
 happiness = 100
-q = 0  # delete some if you can find what they do as some r now useless
+q = 0
 w = 0
 e = 0
 r = 0
@@ -76,8 +76,8 @@ def check():
         cprint(
             'You are in a state of emergency.'
             'Your happiness has decreased by {} total.'
-            'It will continue being decreased by an extra 20 each time until its over'.format(
-                state_of_emergency_happiness), 'red')
+            'It will continue being decreased by an extra 20 each time until its over'
+            .format(state_of_emergency_happiness), 'red')
         cprint('Your money is ={}'.format(money), 'blue')
         time.sleep(1)
         cprint('Your population is ={}'.format(population), 'blue')
@@ -90,8 +90,8 @@ def check():
             population -= state_of_emergency_population
             cprint(
                 'You are in a state of emergency.Your population has decreased by {}.'
-                'It will continue being decreased by an extra 20 each time until its over'.format(
-                    state_of_emergency_population, ), 'red')
+                'It will continue being decreased by an extra 20 each time until its over'
+                .format(state_of_emergency_population, ), 'red')
             cprint('Your money is = {}'.format(money), 'blue')
             time.sleep(1)
             cprint('Your population is = {}'.format(population), 'blue')
@@ -104,8 +104,8 @@ def check():
         population -= state_of_emergency_population
         cprint(
             'You are in a state of emergency.Your population has decreased by {}.'
-            'It will continue being decreased by an extra 20 each time until its over'.format(
-                state_of_emergency_population), 'red')
+            'It will continue being decreased by an extra 20 each time until its over'
+            .format(state_of_emergency_population), 'red')
         cprint('Your money is ={}'.format(money), 'blue')
         time.sleep(1)
         cprint('Your population is ={}'.format(population), 'blue')
@@ -151,7 +151,8 @@ def day_thing():
                     cprint('+{} population'.format(daily_happiness), 'green')
                     time.sleep(1)
                     if extra_happiness > 0:
-                        cprint('+{} happiness'.format(extra_happiness), 'green')
+                        cprint('+{} happiness'.format(extra_happiness),
+                               'green')
                     elif extra_happiness != 0:
                         cprint('{} happiness'.format(extra_happiness), 'red')
                     check()
@@ -168,10 +169,12 @@ YN = input(
     'You control a village. Answer with yes or no unless'
     ' otherwise prompted. Only use lower case. Press enter to continue ')
 while true == 'true':
-    if use_this == 1:  # bartender
+    if use_this == 1:  #bartender
         day_cycle += 0.2
         cprint('Bartender:', 'yellow')
-        YN = input("Can I borrow some money to start a bar?I'll pay you back with interest ")
+        YN = input(
+            "Can I borrow some money to start a bar?I'll pay you back with interest "
+        )
         if YN == 'yes':
             options.remove(1)
             options.append(2)
@@ -213,7 +216,9 @@ while true == 'true':
     if use_this == 3:  # soldiers
         day_cycle += 0.2
         cprint('Squad of soldiers from outside the city:', 'yellow')
-        YN = input("Want to hire us?we'll protect your city against attacking cities and internal threats. ")
+        YN = input(
+            "Want to hire us?we'll protect your city against attacking cities and internal threats. "
+        )
         if YN == 'yes':
             print('Thanks')
             options.remove(3)
@@ -233,7 +238,9 @@ while true == 'true':
         options.append(6)
         options.remove(4)
         if soldiers == 'yes':
-            YN = input("An neighbouring city is soon going to attacking.Should we attack or defend?")
+            YN = input(
+                "An neighbouring city is soon going to attacking.Should we attack or defend?"
+            )
             if YN == 'attack' or 'Attack':
                 print("(You choose attack)")
                 time.sleep(1)
@@ -248,7 +255,9 @@ while true == 'true':
                     print('yes sir')
                     soldiers_status = 'defending'
         else:
-            print("An neighbouring city is soon going to attacking.You might want soldiers")
+            print(
+                "An neighbouring city is soon going to attacking.You might want soldiers"
+            )
             time.sleep(1)
     if use_this == 5:  # Witch
         day_cycle += 0.2
@@ -284,8 +293,9 @@ while true == 'true':
                 time.sleep(1)
                 check()
                 soldiers = 'no'
-            elif (use_this2_attack == 1 and soldiers_status == 'attacking') or (
-                    use_this2_defence == 1 and soldiers_status == 'defending'):
+            elif (use_this2_attack == 1 and soldiers_status == 'attacking'
+                  ) or (use_this2_defence == 1
+                        and soldiers_status == 'defending'):
                 print('You won the battle')
                 time.sleep(1)
                 time.sleep(1)
@@ -311,7 +321,8 @@ while true == 'true':
         cprint('Advisers', 'yellow')
         options.remove(7)
         if money > 0:
-            YN = input('Should we increase taxes?.We only have {} gold '.format(money))
+            YN = input('Should we increase taxes?.We only have {} gold '.
+                       format(money))
             if YN == 'yes':
                 print('Yes sir')
                 time.sleep(1)
@@ -378,7 +389,9 @@ while true == 'true':
         day_cycle += 0.2
         options.remove(9)
         cprint('Squad of soldiers', 'yellow')
-        YN = input('We arrested a very drunk man got into a fight at the bar.Should we through him into the dungeon?')
+        YN = input(
+            'We arrested a very drunk man got into a fight at the bar.Should we through him into the dungeon?'
+        )
         if YN == 'no':
             print('yes sir')
             time.sleep(1)
@@ -393,7 +406,8 @@ while true == 'true':
             cprint('The devil', 'yellow')
             YN = input(
                 'Want to flip a coin?'
-                'If you win,I free some souls but if I win I kill some of your people.What do you say?')
+                'If you win,I free some souls but if I win I kill some of your people.What do you say?'
+            )
             if YN == 'yes':
                 coin_toss = randint(1, 5)
                 heads_or_tails = input('Heads or tails? ')
@@ -490,7 +504,9 @@ while true == 'true':
         day_cycle += 0.2
         options.remove(13)
         if a == 1:  # put up posters no reward
-            print('We have recaptured the criminal unfortunately.She attacked someone but they will recover.')
+            print(
+                'We have recaptured the criminal unfortunately.She attacked someone but they will recover.'
+            )
             extra_happiness += 5
             time.sleep(1)
             cprint('Inner self', 'yellow')
@@ -506,7 +522,8 @@ while true == 'true':
         elif a == 2:  # no posters
             print(
                 'We have recaptured the criminal unfortunately,'
-                'due to the lack of awareness about her,she struck again,Killing 10.')
+                'due to the lack of awareness about her,she struck again,Killing 10.'
+            )
             a += 5
             time.sleep(3)
             cprint('-10 population', 'red')
@@ -518,7 +535,9 @@ while true == 'true':
             cprint("-30 money", "red")
             time.sleep(1)
         else:  # both posters and reward
-            print('Thanks to the posters and the rewards,we were able to recapture the criminal.She is now in jail')
+            print(
+                'Thanks to the posters and the rewards,we were able to recapture the criminal.She is now in jail'
+            )
             time.sleep(1)
             cprint("-30 money", "red")
             time.sleep(1)
@@ -526,7 +545,9 @@ while true == 'true':
     if use_this == 14:  # better defences
         day_cycle += 0.2
         cprint('Adviser:', 'yellow')
-        YN = input("We have noticed flaws in our city's defences.Want us to fix them?")
+        YN = input(
+            "We have noticed flaws in our city's defences.Want us to fix them?"
+        )
         if YN == 'yes':
             print('Our defences are now stronger')
             options.remove(14)
