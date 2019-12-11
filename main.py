@@ -1,1 +1,1 @@
-#go to the game.py file
+from thegame.py import *
