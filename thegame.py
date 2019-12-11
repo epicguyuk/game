@@ -1,7 +1,7 @@
 from random import randint
 import time
 import sys
-from termcolor import colored, cprint
+from termcolor import cprint
 
 options = [1, 3, 4, 7, 8, 9, 10, 11, 12, 14]
 win_lose_attack = [1, 2]
@@ -169,7 +169,7 @@ YN = input(
     'You control a village. Answer with yes or no unless'
     ' otherwise prompted. Only use lower case. Press enter to continue ')
 while true == 'true':
-    if use_this == 1:  #bartender
+    if use_this == 1:  # Bartender
         day_cycle += 0.2
         cprint('Bartender:', 'yellow')
         YN = input(
@@ -194,7 +194,7 @@ while true == 'true':
             time.sleep(1)
             happiness -= 20
             check()
-    if use_this == 2:  # pay back
+    if use_this == 2:  # Pay back
         day_cycle += 0.2
         options.remove(2)
         cprint('Bartender:', 'yellow')
@@ -213,11 +213,11 @@ while true == 'true':
             time.sleep(1)
             happiness += 20
             check()
-    if use_this == 3:  # soldiers
+    if use_this == 3:  # Soldiers
         day_cycle += 0.2
         cprint('Squad of soldiers from outside the city:', 'yellow')
         YN = input(
-            "Want to hire us?we'll protect your city against attacking cities and internal threats. "
+            "Want to hire us?We'll protect your city against attacking cities and internal threats. "
         )
         if YN == 'yes':
             print('Thanks')
@@ -232,7 +232,7 @@ while true == 'true':
         else:
             print('Ok.See you around.')
             time.sleep(1)
-    if use_this == 4 and money > 200:  # war alert
+    if use_this == 4 and money > 200:  # War alert
         day_cycle += 0.2
         cprint('Adviser:', 'yellow')
         options.append(6)
@@ -277,7 +277,7 @@ while true == 'true':
             check()
         else:
             print('As you wish')
-    if use_this == 6:  # war
+    if use_this == 6:  # War
         day_cycle += 0.2
         options.remove(6)
         if soldiers == 'yes':
@@ -316,7 +316,7 @@ while true == 'true':
             money = 30
             time.sleep(1)
             check()
-    if use_this == 7 and money < 51:  # increase tax
+    if use_this == 7 and money < 51:  # Increase tax
         day_cycle += 0.2
         cprint('Advisers', 'yellow')
         options.remove(7)
@@ -346,7 +346,7 @@ while true == 'true':
             else:
                 print('You better have a plan')
                 time.sleep(1)
-    if use_this == 8:  # clown
+    if use_this == 8:  # Clown
         if z > 2:
             day_cycle += 0.2
             z += 1
@@ -385,7 +385,7 @@ while true == 'true':
                 y += 1
         else:
             options.remove(8)
-    if use_this == 9:  # drunk man
+    if use_this == 9:  # Drunk man
         day_cycle += 0.2
         options.remove(9)
         cprint('Squad of soldiers', 'yellow')
@@ -399,7 +399,7 @@ while true == 'true':
             time.sleep(1)
         else:
             print('Yes sir')
-    if use_this == 10:  # devil
+    if use_this == 10:  # Devil
         if p < 4:
             day_cycle += 0.2
             p += 1
@@ -447,7 +447,7 @@ while true == 'true':
                 print('Your loss')
         else:
             options.remove(10)
-    if use_this == 11:  # holiday
+    if use_this == 11:  # Holiday
         cprint("Citizen", 'yellow')
         day_cycle += 0.2
         YN = input(
@@ -470,7 +470,7 @@ while true == 'true':
             happiness -= 20
             time.sleep(1)
             check()
-    if use_this == 12 and soldiers == 'yes':  # escapist
+    if use_this == 12 and soldiers == 'yes':  # Escapist
         cprint('Squad of soldiers', 'yellow')
         day_cycle += 0.2
         options.remove(12)
@@ -499,7 +499,7 @@ while true == 'true':
             time.sleep(1)
             moral -= 1
             a = 2
-    if use_this == 13:  # capture
+    if use_this == 13:  # Capture
         cprint('A Squad of soldiers', 'yellow')
         day_cycle += 0.2
         options.remove(13)
@@ -542,7 +542,7 @@ while true == 'true':
             cprint("-30 money", "red")
             time.sleep(1)
         a += 5
-    if use_this == 14:  # better defences
+    if use_this == 14:  # Better defences
         day_cycle += 0.2
         cprint('Adviser:', 'yellow')
         YN = input(
@@ -563,9 +563,11 @@ while true == 'true':
             check()
         else:
             print('As you wish')
-    if not options:
+    if len(options)==0:
         print("looks like you've finished the game.")
         check()
+        input()
+        
     use_this3 = use_this
     day_thing()
     things_in_options = len(options) - 1
