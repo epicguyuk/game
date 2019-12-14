@@ -215,7 +215,7 @@ while true == 'true':
             check()
     if use_this == 3:  # Soldiers
         day_cycle += 0.2
-        cprint('Squad of soldiers from outside the city:', 'yellow')
+        cprint('army of soldiers from outside the city:', 'yellow')
         YN = input(
             "Want to hire us?We'll protect your city against attacking cities and internal threats. "
         )
@@ -388,7 +388,7 @@ while true == 'true':
     if use_this == 9:  # Drunk man
         day_cycle += 0.2
         options.remove(9)
-        cprint('Squad of soldiers', 'yellow')
+        cprint('royal guard', 'yellow')
         YN = input(
             'We arrested a very drunk man got into a fight at the bar.Should we through him into the dungeon?'
         )
@@ -467,8 +467,8 @@ while true == 'true':
         else:
             time.sleep(1)
             check()
-    if use_this == 12 and soldiers == 'yes':  # Escapist
-        cprint('Squad of soldiers', 'yellow')
+    if use_this == 12:  # Escapist
+        cprint('royal guard', 'yellow')
         day_cycle += 0.2
         options.remove(12)
         options.append(13)
@@ -497,7 +497,7 @@ while true == 'true':
             moral -= 1
             a = 2
     if use_this == 13:  # Capture
-        cprint('A Squad of soldiers', 'yellow')
+        cprint('royal guard', 'yellow')
         day_cycle += 0.2
         options.remove(13)
         if a == 1:  # put up posters no reward
