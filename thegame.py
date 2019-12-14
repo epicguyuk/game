@@ -466,9 +466,6 @@ while true == 'true':
             check()
         else:
             time.sleep(1)
-            cprint('-20 happiness', 'red')
-            happiness -= 20
-            time.sleep(1)
             check()
     if use_this == 12 and soldiers == 'yes':  # Escapist
         cprint('Squad of soldiers', 'yellow')
@@ -566,8 +563,9 @@ while true == 'true':
     if len(options)==0:
         print("looks like you've finished the game.")
         check()
-        input()
-   # if money<51:
+        true='false'
+
+
      
     use_this3 = use_this
     day_thing()
