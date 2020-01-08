@@ -555,7 +555,7 @@ while true == 'true':
             time.sleep(1)
             win_lose_defence.insert(1, 1)
             things_in_win_lose_defence = len(win_lose_defence) - 1
-            random2_attack = randint(0, things_in_win_lose_defence)
+            random2_attack = randint(0, things_in_win_lose_defence)#probmlem here?
             use_this2_defence = options[random2_attack]
             cprint('-70 money', 'red')
             money -= 70
