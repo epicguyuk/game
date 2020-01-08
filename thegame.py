@@ -314,7 +314,7 @@ while true == 'true':
             cprint('Your city was raided.Your soldiers stood down', 'red')
             happiness -= 100
             time.sleep(1)
-            cprint('-300 happiness', 'red')
+            cprint('-100 happiness', 'red')
             time.sleep(1)
             cprint('-{} money'.format(money - 30), 'red')
             money = 30
