@@ -120,6 +120,9 @@ def check():
         time.sleep(1)
         cprint("Your people's happiness is ={}".format(happiness), 'blue')
         time.sleep(1)
+    if population < 1:
+        print('All your citizens have left your town.Game over :-(')
+        exit()    
 
 
 def day_thing():
@@ -288,8 +291,9 @@ while true == 'true':
                 time.sleep(1)
                 cprint('-100 happiness', 'red')
                 time.sleep(1)
-                cprint('-{} money'.format(money - 30), 'red')
-                money = 30
+                if money>30:
+                 cprint('-{} money'.format(money - 30), 'red')
+                 money = 30
                 time.sleep(1)
                 check()
                 soldiers = 'no'
@@ -388,7 +392,7 @@ while true == 'true':
     if use_this == 9:  # Drunk man
         day_cycle += 0.2
         options.remove(9)
-        cprint('royal guard', 'yellow')
+        cprint('Royal guard', 'yellow')
         YN = input(
             'We arrested a very drunk man got into a fight at the bar.Should we through him into the dungeon?'
         )
@@ -468,7 +472,7 @@ while true == 'true':
             time.sleep(1)
             check()
     if use_this == 12:  # Escapist
-        cprint('royal guard', 'yellow')
+        cprint('Royal guard', 'yellow')
         day_cycle += 0.2
         options.remove(12)
         options.append(13)
@@ -497,7 +501,7 @@ while true == 'true':
             moral -= 1
             a = 2
     if use_this == 13:  # Capture
-        cprint('royal guard', 'yellow')
+        cprint('Royal guard', 'yellow')
         day_cycle += 0.2
         options.remove(13)
         if a == 1:  # put up posters no reward
