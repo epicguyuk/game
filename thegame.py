@@ -32,6 +32,7 @@ f = 0
 g = 0
 h = 0
 z = 0
+j = 0
 day_cycle = 0
 no_repeat = 0
 extra_happiness = 0
@@ -235,7 +236,7 @@ while true == 'true':
         else:
             print('Ok.See you around.')
             time.sleep(1)
-    if use_this == 4:  # War alert
+    if use_this == 4 and j>4:  # War alert
         day_cycle += 0.2
         cprint('Adviser:', 'yellow')
         options.append(6)
@@ -311,7 +312,7 @@ while true == 'true':
                 time.sleep(1)
                 check()
         else:
-            cprint('Your city was raided.Your soldiers stood down', 'red')
+            cprint('Your city was raided.', 'red')
             happiness -= 100
             time.sleep(1)
             cprint('-100 happiness', 'red')
@@ -320,7 +321,7 @@ while true == 'true':
             money = 30
             time.sleep(1)
             check()
-    if use_this == 7 and money < 51:  # Increase tax
+    if use_this == 7 :  # Increase tax
         day_cycle += 0.2
         cprint('Advisers', 'yellow')
         options.remove(7)
@@ -576,9 +577,14 @@ while true == 'true':
     things_in_options = len(options) - 1
     random = randint(0, things_in_options)
     use_this = options[random]
+    j+=0
     if use_this == use_this3 and g <= 10:
         things_in_options = len(options) - 1
         random = randint(0, things_in_options)
         use_this = options[random]
         g += 1
     g = 0
+    if money<51:
+      options.append(7)
+    else:
+      options.remove(7)  
