@@ -569,9 +569,11 @@ while true == 'true':
         print("looks like you've finished the game.")
         check()
         true='false'
+    
 
-
-     
+    options.append(7)
+    if money>50:
+     options.remove(7)  
     use_this3 = use_this
     day_thing()
     things_in_options = len(options) - 1
@@ -584,7 +586,3 @@ while true == 'true':
         use_this = options[random]
         g += 1
     g = 0
-    if money<51:
-      options.append(7)
-    else:
-      options.remove(7)  
