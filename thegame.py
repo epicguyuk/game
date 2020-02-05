@@ -1,8 +1,7 @@
 from random import randint
 import time
-import sys
 from termcolor import cprint
-
+#import sys
 options = [1, 3, 4, 7, 8, 9, 10, 11, 12, 14]
 win_lose_attack = [1, 2]
 win_lose_defence = [1, 2]
@@ -33,6 +32,7 @@ g = 0
 h = 0
 z = 0
 j = 0
+k = 0
 day_cycle = 0
 no_repeat = 0
 extra_happiness = 0
@@ -123,7 +123,7 @@ def check():
         time.sleep(1)
     if population < 1:
         print('All your citizens have left your town.Game over :-(')
-        exit()    
+        exit()
 
 
 def day_thing():
@@ -236,7 +236,7 @@ while true == 'true':
         else:
             print('Ok.See you around.')
             time.sleep(1)
-    if use_this == 4 and j>4:  # War alert
+    if use_this == 4 and j > 4:  # War alert
         day_cycle += 0.2
         cprint('Adviser:', 'yellow')
         options.append(6)
@@ -292,9 +292,9 @@ while true == 'true':
                 time.sleep(1)
                 cprint('-100 happiness', 'red')
                 time.sleep(1)
-                if money>30:
-                 cprint('-{} money'.format(money - 30), 'red')
-                 money = 30
+                if money > 30:
+                    cprint('-{} money'.format(money - 30), 'red')
+                    money = 30
                 time.sleep(1)
                 check()
                 soldiers = 'no'
@@ -321,7 +321,7 @@ while true == 'true':
             money = 30
             time.sleep(1)
             check()
-    if use_this == 7 :  # Increase tax
+    if use_this == 7:  # Increase tax
         day_cycle += 0.2
         cprint('Advisers', 'yellow')
         options.remove(7)
@@ -336,6 +336,7 @@ while true == 'true':
                 time.sleep(1)
                 happiness -= 50
                 check()
+                k += 1
             else:
                 print('as you wish')
         else:
@@ -556,7 +557,8 @@ while true == 'true':
             time.sleep(1)
             win_lose_defence.insert(1, 1)
             things_in_win_lose_defence = len(win_lose_defence) - 1
-            random2_attack = randint(0, things_in_win_lose_defence)#probmlem here?
+            random2_attack = randint(
+                0, things_in_win_lose_defence)  #probmlem here?
             use_this2_defence = options[random2_attack]
             cprint('-70 money', 'red')
             money -= 70
@@ -565,21 +567,28 @@ while true == 'true':
             check()
         else:
             print('As you wish')
-    if len(options)==0:
+    if len(options) == 0:
         print("looks like you've finished the game.")
         check()
-        true='false'
-    
+        true = 'false'
 
-    options.append(7)
-    if money>50:
-     options.remove(7)  
+    if k == 0:  #makes sure tax is removed
+        options.append(7)
+    if money > 50 and k == 0:
+        options.remove(7)
+        tax = options.count(7) - 1
+        for i in range(0, tax):
+            options.remove(7)
+    elif k == 1:
+        options.remove(7)
+        k += 1
+
     use_this3 = use_this
     day_thing()
     things_in_options = len(options) - 1
     random = randint(0, things_in_options)
     use_this = options[random]
-    j+=0
+    j += 0
     if use_this == use_this3 and g <= 10:
         things_in_options = len(options) - 1
         random = randint(0, things_in_options)
