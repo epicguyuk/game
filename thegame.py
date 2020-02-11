@@ -534,15 +534,14 @@ while true == 'true':
             population -= 10
             a += 5
             check()
-            money -= 30
-            cprint("-30 money", "red")
             time.sleep(1)
         else:  # both posters and reward
             print(
                 'Thanks to the posters and the rewards,we were able to recapture the criminal.She is now in jail'
             )
             time.sleep(1)
-            cprint("-30 money", "red")
+            money-=10
+            cprint("-10 money (from paying the reward)", "red")
             time.sleep(1)
         a += 5
   if use_this == 14:  # Better defences
