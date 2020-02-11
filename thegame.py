@@ -576,7 +576,6 @@ while true == 'true':
         options.append(7)
   if money > 50 and k == 0:
         options.remove(7)
-        print(options)
         tax = options.count(7) - 1
         for i in range(0, tax):
             options.remove(7)
@@ -584,7 +583,6 @@ while true == 'true':
   elif k == 1:
         options.remove(7)
         k += 1
-        print("ah yes enslaved debug")
 
   use_this3 = use_this
   day_thing()
