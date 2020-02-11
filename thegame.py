@@ -1,7 +1,6 @@
 from random import randint
 import time
 from termcolor import cprint
-#import sys
 options = [1, 3, 4, 8, 9, 10, 11, 12, 14]
 win_lose_attack = [1, 2]
 win_lose_defence = [1, 2]
@@ -46,7 +45,6 @@ state_of_emergency = 'no'
 soldiers_status = 'attacking'
 cost = 0
 drought_countermeasures = 'no'
-capture_reward = 'no'
 things_in_options = len(options) - 1
 random = randint(0, things_in_options)
 use_this = options[random]
@@ -488,7 +486,6 @@ while true == 'true':
             if YN == 'yes':
                 print('Yes Sir')
                 time.sleep(1)
-                capture_reward = 'yes'
                 time.sleep(1)
                 a = 3
                 check()
