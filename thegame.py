@@ -353,7 +353,7 @@ while true == 'true':
                 print('You better have a plan')
                 time.sleep(1)
   if use_this == 8:  # Clown
-        if z > 2:
+        if z < 2:
             day_cycle += 0.2
             z += 1
             cprint('Clown:', 'yellow')
